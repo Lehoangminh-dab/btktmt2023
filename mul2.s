@@ -1,14 +1,12 @@
 #ProblemStatement:
 
 
+#DataDeclaration:
 .section .data
+
 
 #ResultStorer:
 result: .int 
-
-#DataDeclaration:
-
-
 #OutputTemplate:
 output: .asciz "The result is %u\n" # Remember to change parameters so they match the ResultStorer.
 
