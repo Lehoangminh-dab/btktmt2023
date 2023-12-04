@@ -28,6 +28,8 @@ main:
   
   sub a(, %ebx, 4), %eax # eax = eax - a[ebx]
   inc %ebx # ebx++
+  
+  mov %eax, result
 #BOILERPLATE: PRINT RESULT
     pushq %rbp
     movq %rsp, %rbp
