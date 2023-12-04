@@ -13,13 +13,13 @@ main:
 #BOILERPLATE: STORE RESULT TO PRINTING VARIABLE
   # mov variable, result
 #BOILERPLATE: PRINT RESULT
-    pushq %rbp
-    movq %rsp, %rbp
-    movl result, %eax
-    movl $print_format, %edi
-    movl %eax, %esi
-    xorl %eax, %eax
-    call printf
-    movl $0, %eax
-    leave
-    ret
+  pushq %rbp
+  movq %rsp, %rbp
+  movl result, %eax
+  movl $print_format, %edi
+  movl %eax, %esi
+  xorl %eax, %eax
+  call printf
+  movl $0, %eax
+  leave
+  ret
