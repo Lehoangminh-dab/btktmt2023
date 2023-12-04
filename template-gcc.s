@@ -7,9 +7,11 @@
 
 .section .text
 .globl main
-  main:
+main:
 #SOLUTION:
 
+#BOILERPLATE: STORE RESULT TO PRINTING VARIABLE
+  # mov variable, result
 #BOILERPLATE: PRINT RESULT
     pushq %rbp
     movq %rsp, %rbp
