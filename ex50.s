@@ -17,7 +17,6 @@ while:
   cmp %eax, %ebx
   je endwhile
 if:
-  cmp %eax, %ebx
   ja else
   sub %ebx, %eax
   jmp while
