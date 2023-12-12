@@ -2,11 +2,12 @@
 # ecx=a; 
 # eax=0; 
 # while(ecx>0) { eax+=ecx; ecx--;}
+# Expected result: ecx = 4 -> eax = 1 + 2 + 3 = 6
 .section .data
   print_format: .string "%d\n"
   result: .int 30
 #DATA:
-a: .int 2
+a: .int 4
 .section .text
 .globl main
 main:
