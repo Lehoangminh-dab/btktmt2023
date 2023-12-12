@@ -1,0 +1,3 @@
+- Lệnh gán giá trị một biến khác so với compiler của thầy
+VD: ecx = a
+Của thầy là mov $a, %ecx thì gcc là mov a, %ecx
