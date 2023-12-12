@@ -14,13 +14,14 @@ n: .int 4
 .globl main
 main:
 #SOLUTION:
+mov a, %ecx
 mov $1, %eax
 xor %ebx, %ebx
 while:
   cmp %eax, n
   jle endwhile
 do:
-  add a, %ebx
+  add %ecx, %ebx
   inc %eax
   jmp while
 endwhile:
