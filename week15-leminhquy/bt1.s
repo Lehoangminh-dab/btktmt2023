@@ -1,25 +1,32 @@
+# Note: This file's target compiler is gcc.
 #PROBLEM:
-# ecx=a; 
-# eax=0; 
-# while(ecx>0) { eax+=ecx; ecx--;}
-# Expected result: ecx = 4 -> eax = 1 + 2 + 3 + 4 = 10
+# int a[8]={-1, 2,-3,9,-12,18,12,-3}, n=8;
+# eax=0;
+# ecx=0;
+# while (ecx < n && a[ecx]>=0)  eax += a[ecx++] ;
+
 .section .data
   print_format: .string "%d\n"
   result: .int 30
 #DATA:
-a: .int 4
+n: .int 8
+a: .int 1, 2, -3, 9, -12, 18, 12, -3
 .section .text
 .globl main
 main:
 #SOLUTION:
-mov a, %ecx
 xor %eax, %eax
+xor %ecx, %ecx
 while:
-  cmp $0, %ecx
-  jle endwhile
-then:
-  add %ecx, %eax
-  dec %ecx
+  cmp $n, %ecx
+  jge endwhile
+
+  cmp $0, a(, %ecx, 4)
+  jl endwhile
+
+do: 
+  add a(, %ecx, 4), %eax
+  inc %ecx
   jmp while
 endwhile:
   mov %eax, result
